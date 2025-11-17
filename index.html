@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sagun Pokherel — Portfolio</title>
+  <meta name="description" content="Portfolio of Sagun Pokherel — CS student at Biratnagar International College" />
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#6ee7b7;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --maxw:1000px;
+      --accent-2: #60a5fa;
+      --white:#f8fafc;
+      font-synthesis: none;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #071027 0%, #071827 60%);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+      margin: 0 auto;
+      display:grid;
+      grid-template-columns: 340px 1fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    /* SIDEBAR */
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      padding:20px;
+      border-radius:var(--radius);
+      box-shadow: 0 6px 24px rgba(2,6,23,0.6);
+    }
+
+    .me{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+    .avatar{
+      width:84px;
+      height:84px;
+      border-radius:16px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:28px;
+      color:#04222b;
+      box-shadow: 0 6px 18px rgba(10,20,30,0.6);
+      flex-shrink:0;
+    }
+    h1{
+      margin:0;
+      font-size:20px;
+      letter-spacing: -0.2px;
+    }
+    p.role{
+      margin:6px 0 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .sidebar-section{
+      margin-top:18px;
+    }
+    .muted{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:8px;
+    }
+
+    .info-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .info-list li{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      font-size:14px;
+      color:var(--white);
+    }
+    .pill{
+      margin-left:auto;
+      background:var(--glass);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    /* MAIN */
+    main{
+      min-height:420px;
+    }
+    .hero{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+    .hero-left h2{
+      margin:0;
+      font-size:22px;
+    }
+    .hero-left p{margin:6px 0 0 0;color:var(--muted)}
+    .cta{
+      display:flex;
+      gap:8px;
+    }
+    .btn{
+      background:transparent;
+      padding:10px 14px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.06);
+      cursor:pointer;
+      color:var(--white);
+      font-weight:600;
+      font-size:14px;
+      text-decoration:none;
+    }
+    .btn-primary{
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#023036;
+      border:none;
+      box-shadow: 0 8px 28px rgba(34,197,94,0.08);
+    }
+
+    section.card + section.card{margin-top:16px}
+
+    .about p{color:var(--muted);line-height:1.6;margin:0}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+
+    .project{
+      background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+      padding:12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.03);
+      min-height:100px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .project h4{margin:0;font-size:15px}
+    .project p{margin:0;color:var(--muted);font-size:13px}
+
+    .skills{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+    .skill{
+      background:rgba(255,255,255,0.02);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    .contact-form{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-top:8px;
+    }
+    input, textarea{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.05);
+      padding:10px;
+      border-radius:8px;
+      color:var(--white);
+      resize:none;
+      font-size:14px;
+    }
+    input::placeholder, textarea::placeholder{color:var(--muted)}
+    .footer{
+      margin-top:18px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* small screens */
+    @media (max-width:880px){
+      .wrap{grid-template-columns:1fr; padding-bottom:60px}
+      .me{justify-content:center}
+      .hero{flex-direction:column;align-items:flex-start}
+      .cta{justify-content:flex-start}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- SIDEBAR -->
+    <aside class="card">
+      <div class="me">
+        <div class="avatar">SP</div>
+        <div>
+          <h1>Sagun Pokherel</h1>
+          <p class="role">CS Student — Biratnagar International College</p>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="muted">About me</div>
+        <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.5">
+          I'm Sagun — a Computer Science student at Biratnagar International College (BIC). I enjoy building small web apps, learning new programming concepts, and solving problems.
+        </p>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="muted">Contact</div>
+        <ul class="info-list">
+          <li>📍 Biratnagar, Nepal <span class="pill">Open to work</span></li>
+          <li>✉️ email@example.com</li>
+          <li>💬 +977-98XXXXXXXX</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="muted">Skills</div>
+        <div class="skills">
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">Python</div>
+          <div class="skill">Unity (learning)</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="muted">Education</div>
+        <p style="margin:0;font-size:14px;color:var(--white)">Biratnagar International College — BSc CS (in progress)</p>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main>
+      <div class="hero">
+        <div class="hero-left">
+          <h2>Hi — I'm Sagun 👋</h2>
+          <p>Computer Science student at Biratnagar International College. I build beginner-friendly web projects and enjoy learning about games and AI.</p>
+        </div>
+        <div class="cta">
+          <a class="btn btn-primary" href="#projects">See projects</a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <section id="projects" class="card">
+        <div class="muted">Projects</div>
+        <div class="grid">
+          <article class="project">
+            <h4>Portfolio (this page)</h4>
+            <p>A single-file HTML + CSS portfolio template — easy to edit and reuse.</p>
+          </article>
+
+          <article class="project">
+            <h4>Mini Game (Unity)</h4>
+            <p>Simple 3D mini-island demo showcasing movement and terrain (in progress).</p>
+          </article>
+
+          <article class="project">
+            <h4>Banking System (Java)</h4>
+            <p>Beginner Java GUI banking system with accounts and simple operations.</p>
+          </article>
+
+          <article class="project">
+            <h4>AI Tutor App (concept)</h4>
+            <p>Concept that includes live teacher support and local voice detection (research stage).</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="card about">
+        <div class="muted">About</div>
+        <p>
+          I'm learning software development and working on small projects to practice programming concepts. I prefer clear, simple code and step-by-step learning. Outside coding I like reading and experimenting with small game prototypes.
+        </p>
+      </section>
+
+      <section id="contact" class="card">
+        <div class="muted">Contact me</div>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks — message simulated (replace with real mailto or backend).')">
+          <input type="text" placeholder="Your name" required />
+          <input type="email" placeholder="Your email" required />
+          <textarea rows="4" placeholder="Short message" required></textarea>
+          <div style="display:flex;gap:8px;">
+            <button type="submit" class="btn btn-primary" style="flex:0 0 auto">Send</button>
+            <a class="btn" href="mailto:email@example.com" style="flex:1;text-align:center">Email me</a>
+          </div>
+        </form>
+      </section>
+
+      <div class="footer">
+        © <span id="year"></span> Sagun Pokherel — Biratnagar International College — Computer Science
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
