@@ -7,8 +7,6 @@
   <meta name="description" content="Portfolio of Sagun Pokherel — CS student at Biratnagar International College" />
   <style>
     :root{
-      --bg:#0f1724;
-      --card:#0b1220;
       --muted:#94a3b8;
       --accent:#6ee7b7;
       --glass: rgba(255,255,255,0.03);
@@ -23,8 +21,6 @@
     body{
       margin:0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg, #071027 0%, #071827 60%);
-      color:var(--white);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       padding:32px;
@@ -98,7 +94,7 @@
       gap:10px;
       align-items:center;
       font-size:14px;
-      color:var(--white);
+      
     }
     .pill{
       margin-left:auto;
@@ -217,6 +213,98 @@
       .hero{flex-direction:column;align-items:flex-start}
       .cta{justify-content:flex-start}
     }
+    #upBtn {
+    background: linear-gradient(135deg, #67C5D7, #EDEDEB);
+    padding: 12px 25px;
+    border-radius: 15px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+  }
+  body.light {
+  background-color: white;
+  color: black;
+}
+
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+.skill-box {
+  margin-bottom: 10px;
+}
+
+.skill-box p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.skill-bar {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  height: 16px;
+  border-radius: 10px;
+  margin-top: 3px;
+  overflow: hidden;
+}
+
+.skill-level {
+  width: 0;
+  height: 100%;
+  background: var(--accent-2);
+  border-radius: 10px;
+  transition: width 2s;
+}
+
+/* 🔥 Image Slider CSS */
+.slider {
+  position: relative;
+  max-width: 100%;
+  margin: 10px auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 12px;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.1);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 16px;
+}
+
+.prev { left: 5px; }
+.next { right: 5px; }
+
+
+.project {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+}
+
+
+
 
   </style>
 </head>
@@ -227,6 +315,8 @@
       <div class="me">
         <img src="s.jpg" class="avatar-img" alt="Sagun Pokherel">
         <div>
+           <h1>Dark & Light Mode with LocalStorage</h1>
+    <button id="themeBtn">Switch Mode</button>
           <h1>Sagun Pokherel</h1>
           <p class="role">CS Student — Biratnagar International College</p>
         </div>
@@ -249,20 +339,57 @@
       </div>
 
       <div class="sidebar-section">
-        <div class="muted">Skills</div>
-        <div class="skills">
-          <div class="skill">HTML</div>
-          <div class="skill">CSS</div>
-          <div class="skill">JavaScript</div>
-          <div class="skill">Python</div>
-          <div class="skill">Unity (learning)</div>
-        </div>
-      </div>
+  <div class="muted">Skills</div>
+
+  <div class="skill-box">
+    <p>HTML</p>
+    <div class="skill-bar"><div class="skill-level" data-level="90%"></div></div>
+  </div>
+
+  <div class="skill-box">
+    <p>CSS</p>
+    <div class="skill-bar"><div class="skill-level" data-level="80%"></div></div>
+  </div>
+
+  <div class="skill-box">
+    <p>JavaScript</p>
+    <div class="skill-bar"><div class="skill-level" data-level="60%"></div></div>
+  </div>
+
+  <div class="skill-box">
+    <p>Python</p>
+    <div class="skill-bar"><div class="skill-level" data-level="50%"></div></div>
+  </div>
+
+  <div class="skill-box">
+    <p>Unity (learning)</p>
+    <div class="skill-bar"><div class="skill-level" data-level="40%"></div></div>
+  </div>
+</div>
+<!-- 🔥 Image Slider Section -->
+<div class="sidebar-section">
+  <div class="muted">Gallery</div>
+  <div class="slider">
+    <div class="slides">
+      <img src="about__image-new.png" class="slide">
+      <img src="lvvvieqTTmZAhlmV3zyYfRc4C0ubCW-metaMlUxQTEwMzFfMTF6b24uanBn-.jpg" class="slide">
+      <img src="wlv__image-h.png" class="slide">
+    </div>
+    <button class="prev">◀</button>
+    <button class="next">▶</button>
+  </div>
+</div>
+
+
 
       <div class="sidebar-section">
         <div class="muted">Education</div>
-        <p style="margin:0;font-size:14px;color:var(--white)">Biratnagar International College — BSc CS (in progress)</p>
+        <p style="margin:0;font-size:14px;">Biratnagar International College — BSc CS (in progress)</p>
       </div>
+      <video controls width="200" height="200" >
+    <source src="medias/mixkit-snowy-slope-and-pine-tree-cover-in-canada-3382-hd-ready.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
     </aside>
 
     <!-- MAIN -->
@@ -285,21 +412,6 @@
             <h4>Portfolio (this page)</h4>
             <p>A single-file HTML + CSS portfolio template — easy to edit and reuse.</p>
           </article>
-
-          <article class="project">
-            <h4>Mini Game (Unity)</h4>
-            <p>Simple 3D mini-island demo showcasing movement and terrain (in progress).</p>
-          </article>
-
-          <article class="project">
-            <h4>Banking System (Java)</h4>
-            <p>Beginner Java GUI banking system with accounts and simple operations.</p>
-          </article>
-
-          <article class="project">
-            <h4>AI Tutor App (concept)</h4>
-            <p>Concept that includes live teacher support and local voice detection (research stage).</p>
-          </article>
         </div>
       </section>
 
@@ -312,25 +424,122 @@
 
       <section id="contact" class="card">
         <div class="muted">Contact me</div>
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks — message simulated (replace with real mailto or backend).')">
-          <input type="text" placeholder="Your name" required />
-          <input type="email" placeholder="Your email" required />
-          <textarea rows="4" placeholder="Short message" required></textarea>
-          <div style="display:flex;gap:8px;">
-            <button type="submit" class="btn btn-primary" style="flex:0 0 auto">Send</button>
-            <a class="btn" href="mailto:email@example.com" style="flex:1;text-align:center">Email me</a>
-          </div>
+        <form class="contact-form" id="contactForm">
+        <input type="text" id="name" placeholder="Your name" />
+        <input type="email" id="email" placeholder="Your email" />
+        <textarea id="message" rows="4" placeholder="Short message"></textarea>
+        <p id="msg" style="color:red;font-size:13px;"></p>
+        <button type="button" class="btn btn-primary" onclick="submitForm()">Send</button>
         </form>
       </section>
 
       <div class="footer">
+        <!-- Big Sign Up Button -->
+  <button class="up-btn" id="upBtn" style="flex:0 0 auto">Up</button>
         © <span id="year"></span> Sagun Pokherel — Biratnagar International College — Computer Science
       </div>
     </main>
   </div>
-
+  
   <script>
+    const body = document.body;
+const btn = document.getElementById("themeBtn");
+
+let savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+  body.classList.add("dark");
+} else {
+  body.classList.add("light");
+}
+
+btn.addEventListener("click", () => {
+  if (body.classList.contains("light")) {
+    body.classList.replace("light", "dark");
+    localStorage.setItem("theme", "dark"); // save
+  } else {
+    body.classList.replace("dark", "light");
+    localStorage.setItem("theme", "light"); // save
+  }
+});
     document.getElementById('year').textContent = new Date().getFullYear();
+   const upBtn = document.getElementById("upBtn");
+
+    // Scroll to top when Sign Up is clicked
+    upBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    function navigate(){
+      window.location.href = "mailto:email@example.com";
+    }
+    window.onload = function(){
+  let bars = document.querySelectorAll(".skill-level");
+  bars.forEach(function(bar){
+    let level = bar.getAttribute("data-level");
+    bar.style.width = level;
+  });
+};
+
+// 🔥 Image Slider Functionality
+const slides = document.querySelector(".slides");
+const slideImages = document.querySelectorAll(".slide");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+let index = 0;
+
+function showSlide(i) {
+  if (i < 0) index = slideImages.length - 1;
+  else if (i >= slideImages.length) index = 0;
+  slides.style.transform = `translateX(${-index * 100}%)`;
+}
+
+nextBtn.addEventListener("click", () => { index++; showSlide(index); });
+prevBtn.addEventListener("click", () => { index--; showSlide(index); });
+
+  
+  const projects = document.querySelectorAll(".project");
+
+  projects[0].addEventListener("click", () => {
+    window.location.href = " https://sagunpokhrel.github.io/myfirsttutorial/"; // Portfolio project
+  });
+
+   function submitForm() {
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let message = document.getElementById("message").value.trim();
+  let msg = document.getElementById("msg");
+
+  if (name === "" || email === "" || message === "") {
+    msg.textContent = "All fields are required.";
+    return;
+  }
+
+  let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!email.match(emailPattern)) {
+    msg.textContent = "Enter valid email.";
+    return;
+  }
+
+  localStorage.setItem("name", name);
+  localStorage.setItem("email", email);
+  localStorage.setItem("message", message);
+
+  msg.style.color = "lightgreen";
+  msg.textContent = "Success! Redirecting...";
+  setTimeout(() => {
+    window.location.href = "form-details.html";
+  }, 1000);
+}
+
+
+
+
+
   </script>
 </body>
 </html>

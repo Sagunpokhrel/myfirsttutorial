@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Form Details</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .box { border: 1px solid #ccc; padding: 15px; border-radius: 8px; max-width: 400px; }
+  </style>
+</head>
+<body>
+  <h2>Form Details</h2>
+  <div class="box">
+    <p><strong>Name:</strong> <span id="dName"></span></p>
+    <p><strong>Email:</strong> <span id="dEmail"></span></p>
+    <p><strong>Message:</strong> <span id="dMessage"></span></p>
+  </div>
+
+  <script>
+    document.getElementById("dName").textContent = localStorage.getItem("name");
+    document.getElementById("dEmail").textContent = localStorage.getItem("email");
+    document.getElementById("dMessage").textContent = localStorage.getItem("message");
+  </script>
+</body>
+</html>
